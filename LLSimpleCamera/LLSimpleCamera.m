@@ -198,6 +198,8 @@ NSString *const LLSimpleCameraErrorDomain = @"LLSimpleCameraErrorDomain";
         _session.sessionPreset = self.cameraQuality;
         
         // preview layer
+        [self.captureVideoPreviewLayer removeFromSuperlayer];
+
         CGRect bounds = self.preview.layer.bounds;
         _captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
         _captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
